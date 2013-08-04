@@ -64,7 +64,7 @@ void test_call_by_reference2(void) /* error case */
 	printf("%s] val1(%d), val2(%d)\n", __FUNCTION__, *pVal1, *pVal2); // 10, 20
 }
 
-void call_by_reference3(int **pA, int **pB) /* fix the error case by double pointer */
+void call_by_reference2_1(int **pA, int **pB) /* fix the error case by double pointer */
 {
 	int *pTmp = *pA;
 	*pA = *pB;
@@ -73,7 +73,7 @@ void call_by_reference3(int **pA, int **pB) /* fix the error case by double poin
 	printf("%s] *pA(%d), *pB(%d)\n", __FUNCTION__, **pA, **pB);
 }
 
-void test_call_by_reference3(void) 
+void test_call_by_reference2_1(void) 
 {
 	int val1 = 10;
 	int val2 = 20;
@@ -95,5 +95,5 @@ int main(void)
 	printf("\n");
 	test_call_by_reference2();
 	printf("\n");
-	test_call_by_reference3();
+	test_call_by_reference2_1();
 }
