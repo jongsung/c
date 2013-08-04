@@ -78,7 +78,7 @@ void test8()
 {
 	char *pArr[3] = {"kiwi", "banana", "apple"};
 	
-	printf("size(%d)\n", sizeof(pArr));
+	printf("size(%d)\n", sizeof(pArr)); // 12
 	printf("%s %s %s\n", pArr[0], pArr[1], pArr[2]);
 }
 

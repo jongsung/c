@@ -21,7 +21,7 @@ void test1(void)
 void test2_show_array(int (*ptr)[4], int size)
 {
 	int i, j;
-	printf("%s]\n", __FUNCTION__);
+	printf("%s], size of ptr=%d\n", __FUNCTION__, sizeof(ptr)); // 4
 	
 	for(i=0; i<size ; i++)
 	{
@@ -38,7 +38,7 @@ void test2()
 	int arr1[2][4] = {1, 2, 3, 4, 5, 6, 7, 8};
 	int arr2[3][4] = {{1}, {2}, {3}};
 	
-	printf("%s]\n", __FUNCTION__);
+	printf("%s] size arr1=%d, arr2=%d\n", __FUNCTION__, sizeof(arr1), sizeof(arr2)); // 32, 48
 	
 	test2_show_array(arr1, 2);
 	test2_show_array(arr2, 3);
