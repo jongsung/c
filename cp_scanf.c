@@ -2,15 +2,15 @@
 
 int main(void)
 {
-    char ch;
-    int i;
-    double fdata;
-    char str[100];
+    char cData;
+    int iData;
+    double dData;
+    char strData[100];
 
     printf("input: char, int, double, string:");
-    scanf("%c, %d, %lf, %s", &ch, &i, &fdata, str);
+    scanf("%c, %d, %lf, %s", &cData, &iData, &dData, strData);
     
-    printf("%c, %d, %f, %s\n", ch, i, fdata, str);
+    printf("%c, %d, %f, %s\n", cData, iData, dData, strData);
 
 
     return 0;
