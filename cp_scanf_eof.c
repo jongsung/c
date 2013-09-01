@@ -10,7 +10,7 @@ int main(void)
     {
         fputs("Input Data(Crtl+Z to exit):", stdout);
         ret =  scanf("%d", &input);
-        if(input == EOF)
+        if(ret == EOF)
         {
             break;
         }
