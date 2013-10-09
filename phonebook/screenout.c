@@ -3,8 +3,12 @@
 
 void ShowMenu(void)
 {
+#ifdef WIN32
+    system("cls");
+#else
     system("clear");
-    
+#endif
+
     printf("========================================\n");
     printf(" 1. Input \n");
     printf(" 2. Show All \n");

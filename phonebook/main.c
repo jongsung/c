@@ -24,14 +24,15 @@ int main(void)
         switch(inputMenu)
         {
             case INPUT:
-            
+            InputPhoneData();   
             break;
             
             case SHOWALL:
-            
+            ShowAllData();
             break;
             
             case QUIT:
+            case 'q':
             default:
             break;
         }
@@ -42,7 +43,6 @@ int main(void)
         }
     }
     
-
     return 0;
 }
     

@@ -16,15 +16,9 @@ string.h
 
 /home/jongsung/work/git/c/phonebook/phonedata.h
 
-/home/jongsung/work/git/c/phonebook/phonefunc.c
+/home/jongsung/work/git/c/phonebook/screenout.c
 common.h
 /home/jongsung/work/git/c/phonebook/common.h
-phonedata.h
-/home/jongsung/work/git/c/phonebook/phonedata.h
-phonefunc.h
-/home/jongsung/work/git/c/phonebook/phonefunc.h
-
-/home/jongsung/work/git/c/phonebook/phonefunc.h
 phonedata.h
 /home/jongsung/work/git/c/phonebook/phonedata.h
 
