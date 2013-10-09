@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jongsung/work/git/c/phonebook/common.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/jongsung/work/git/c/phonebook/phonedata.h
+
+/home/jongsung/work/git/c/phonebook/phonefunc.c
+common.h
+/home/jongsung/work/git/c/phonebook/common.h
+phonedata.h
+/home/jongsung/work/git/c/phonebook/phonedata.h
+phonefunc.h
+/home/jongsung/work/git/c/phonebook/phonefunc.h
+
+/home/jongsung/work/git/c/phonebook/phonefunc.h
+phonedata.h
+/home/jongsung/work/git/c/phonebook/phonedata.h
+

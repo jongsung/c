@@ -1,0 +1,1 @@
+/usr/bin/cc      CMakeFiles/phonebook.dir/main.c.o CMakeFiles/phonebook.dir/phonefunc.c.o CMakeFiles/phonebook.dir/screenout.c.o  -o phonebook -rdynamic 
