@@ -10,7 +10,6 @@ phonedata phonelist[LIST_NUM];
 void InputPhoneData(void)
 {
     phonedata inputdata;
-
     if(numofdata >= LIST_NUM)
     {
         printf("esceed max input\n");
@@ -19,30 +18,26 @@ void InputPhoneData(void)
 
     fputs("input name:", stdout);
     gets(inputdata.name);
-    fflush(stdin);
 
-//    fputs("input number:", stdout);
-//    gets(inputdata.phonenum);
-    strcpy(inputdata.phonenum, "000-000-0000");
+    fputs("input number:", stdout);
+    gets(inputdata.phonenum);
 
     phonelist[numofdata] = inputdata;
     numofdata++;
 
-    //printf("%s]\n", __FUNCTION__);
+    printf("%s]\n", __FUNCTION__);
     getchar();
 }
 
 
 void ShowAllData(void)
 {
-    printf("%s]\n", __FUNCTION__);
-    
     int i = 0;
     
     for(i=0; i<numofdata ; i++)
     {
-        printf("data num: %d\n", i);
 #if 0
+        printf("data[%d]\n", i);
         printf("name: %s\n", phonelist[i].name);
         printf("phone: %s\n", phonelist[i].phonenum);
 #else
@@ -52,3 +47,55 @@ void ShowAllData(void)
 
     getchar();
 }
+
+
+void SearchPhoneData(void)
+{
+	int i;
+	char tmpName[NAME_LEN];
+	fputs("Input Search Name:", stdout);
+	gets(tmpName);
+
+	for(i=0; i<numofdata ; i++)
+	{
+		if(strcmp(phonelist[i].name, tmpName) == 0)
+		{
+			ShowPhoneInfo(phonelist[i]);
+			fputs("Search founded !", stdout);
+			getchar();
+			return;
+		}
+	}
+
+	fputs("No Search result", stdout);
+	getchar();
+}
+
+
+void DeletePhoneData(void)
+{
+	int i, j;
+	char tmpName[NAME_LEN];
+
+	fputs("Input Delete Name:", stdout);
+	gets(tmpName);
+
+	for(i=0 ; i<numofdata ; i++)
+	{
+		if(strcmp(phonelist[i].name, tmpName) == 0)
+		{
+			for(j=i; j<numofdata-1 ; j++)
+			{
+				phonelist[j] = phonelist[j+1];
+			}
+			numofdata = numofdata -1;
+			puts("Deleted !!");
+			getchar();
+			return;
+		}
+	}
+	puts("no data found to delete !!");
+	getchar();
+	
+}
+

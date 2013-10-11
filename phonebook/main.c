@@ -2,13 +2,6 @@
 #include "screenout.h"
 #include "phonefunc.h"
 
-enum {
-    INPUT=1,
-    SHOWALL,
-    QUIT
-};
-
-
 int main(void)
 {
     int inputMenu = 0;
@@ -20,25 +13,35 @@ int main(void)
         fputs("Select: ", stdout);
         scanf("%d", &inputMenu);
         fflush(stdin);
-        
+
         switch(inputMenu)
         {
-            case INPUT:
+            case PHONE_INPUT:
             InputPhoneData();   
             break;
             
-            case SHOWALL:
+            case PHONE_SHOWALL:
             ShowAllData();
             break;
+
+			case PHONE_SEARCH:
+			SearchPhoneData();
+			break;
+
+			case PHONE_DELETE:
+			DeletePhoneData();
+			break;
             
-            case QUIT:
+            case PHONE_QUIT:
             case 'q':
+			break;
+
             default:
             break;
         }
         
-        if(inputMenu == QUIT)
-        {
+        if((inputMenu == PHONE_QUIT) || (inputMenu == 'q'))    
+		{
             break;
         }
     }
