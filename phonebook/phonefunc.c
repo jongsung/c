@@ -5,11 +5,20 @@
 #define LIST_NUM    100
 
 int numofdata = 0;
-phonedata phonelist[LIST_NUM];
+//phonedata phonelist[LIST_NUM];
+phonedata *phonelist[LIST_NUM];
 
 void InputPhoneData(void)
 {
-    phonedata inputdata;
+    //phonedata inputdata;
+	phonedata *pData;
+	pData = (phonedata *) malloc(sizeof(phonedata));
+	if(pData == NULL)
+	{
+		printf("malloc failed\n");
+		return;
+	}
+
     if(numofdata >= LIST_NUM)
     {
         printf("esceed max input\n");
@@ -17,16 +26,19 @@ void InputPhoneData(void)
     }
 
     fputs("input name:", stdout);
-    gets(inputdata.name);
+    //gets(inputdata.name);
+	gets(pData->name);
 
     fputs("input number:", stdout);
-    gets(inputdata.phonenum);
+	//gets(inputdata.phonenum);
+	gets(pData->phonenum);
 
-    phonelist[numofdata] = inputdata;
+    //phonelist[numofdata] = inputdata;
+	phonelist[numofdata] = pData;
     numofdata++;
 
     printf("%s]\n", __FUNCTION__);
-    getchar();
+    //getchar();
 }
 
 
@@ -58,7 +70,8 @@ void SearchPhoneData(void)
 
 	for(i=0; i<numofdata ; i++)
 	{
-		if(strcmp(phonelist[i].name, tmpName) == 0)
+		//if(strcmp(phonelist[i].name, tmpName) == 0)
+		if(strcmp(phonelist[i]->name, tmpName) == 0)
 		{
 			ShowPhoneInfo(phonelist[i]);
 			fputs("Search founded !", stdout);
@@ -82,8 +95,11 @@ void DeletePhoneData(void)
 
 	for(i=0 ; i<numofdata ; i++)
 	{
-		if(strcmp(phonelist[i].name, tmpName) == 0)
+		//if(strcmp(phonelist[i].name, tmpName) == 0)
+		if(strcmp(phonelist[i]->name, tmpName) == 0)
 		{
+			free(phonelist[i]); // free
+
 			for(j=i; j<numofdata-1 ; j++)
 			{
 				phonelist[j] = phonelist[j+1];

@@ -22,10 +22,11 @@ void ShowMenu(void)
 }
 
 
-void ShowPhoneInfo(phonedata phone)
+//void ShowPhoneInfo(phonedata phone)
+void ShowPhoneInfo(phonedata *phone)
 {
     printf("========================================\n");
-    printf(" name: %s\n", phone.name);
-    printf(" phone number: %s\n", phone.phonenum);
+    printf(" name: %s\n", phone->name);
+    printf(" phone number: %s\n", phone->phonenum);
     printf("========================================\n");
 }
