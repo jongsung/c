@@ -23,7 +23,7 @@ void ShowMenu(void)
 
 
 //void ShowPhoneInfo(phonedata phone)
-void ShowPhoneInfo(phonedata *phone)
+void ShowPhoneInfo(const phonedata *phone)
 {
     printf("========================================\n");
     printf(" name: %s\n", phone->name);
