@@ -9,12 +9,8 @@
 #include <windows.h>
 #endif
 
-enum {
-    PHONE_INPUT=1,
-    PHONE_SHOWALL,
-	PHONE_SEARCH,
-	PHONE_DELETE,
-    PHONE_QUIT
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #endif /* __COMMON_H__ */

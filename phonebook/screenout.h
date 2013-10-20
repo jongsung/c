@@ -4,7 +4,8 @@
 #include "phonedata.h"
 
 void ShowMenu(void);
-//void ShowPhoneInfo(phonedata phone);
-void ShowPhoneInfo(const phonedata *phone);
+void ShowPhoneInfo(phoneData phone);
+void ShowPhoneInfoByPtr(phoneData * pPhone);
+
 
 #endif /* __SCREENOUT_H__ */

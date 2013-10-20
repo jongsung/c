@@ -4,9 +4,10 @@
 #define NAME_LEN	30
 #define PHONE_LEN	30
 
-typedef struct __phonedata {
+typedef struct __phoneData 
+{
     char name[NAME_LEN];
-    char phonenum[PHONE_LEN];
-} phonedata;
+    char phoneNum[PHONE_LEN];
+} phoneData;
 
 #endif /* __PHONEDATA_H__ */

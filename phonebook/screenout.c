@@ -1,32 +1,50 @@
 #include "common.h"
-#include "phonedata.h"
+#include "phoneData.h"
 
-
+/* 함    수: void ShowMenu(void)
+ * 기    능: 선택을 위한 메뉴 출력. 
+ * 반    환: void.
+ *
+ */
 void ShowMenu(void)
 {
-
-#ifdef WIN32
-	system("cls");
-#else
-    system("clear");
-#endif
-
-    printf("========================================\n");
-    printf(" %d. Input \n", PHONE_INPUT);
-    printf(" %d. Show All \n", PHONE_SHOWALL);
-    printf(" %d. Search \n", PHONE_SEARCH);
-	printf(" %d. Delete \n", PHONE_DELETE);
-    printf(" %d. Quit \n", PHONE_QUIT);
-    printf("========================================\n");
-    printf("Select: ");
+    system("cls");   //stdlib.h
+    
+    printf("━━━━━ 메  뉴 ━━━━━━━ \n");
+    printf(" 1. 전화번호 입력 \n"      );
+    printf(" 2. 전체 정보 출력 \n"     );
+    printf(" 3. 전화번호 검색 \n"      );
+    printf(" 4. 전화번호 삭제 \n"      );
+    printf(" 5. 전화번호 변경 \n"      );
+    printf(" 6. 종료 \n"               );
+    printf("━━━━━━━━━━━━━━━━ \n");
+    printf("선택》 ");
 }
 
-
-//void ShowPhoneInfo(phonedata phone)
-void ShowPhoneInfo(const phonedata *phone)
+/* 함    수: void ShowPhoneInfo(phoneData phone)
+ * 기    능: 이름과 전화번호 정보 출력.
+ * 반    환: void.
+ *
+ */
+void ShowPhoneInfo(phoneData phone)
 {
-    printf("========================================\n");
-    printf(" name: %s\n", phone->name);
-    printf(" phone number: %s\n", phone->phonenum);
-    printf("========================================\n");
+    printf("┏━━━━━━━━━━━━━━━━ \n"   );
+    printf("┃ ▶ 이름: %s \n", phone.name           );
+    printf("┃ ▶ 전화번호: %s \n", phone.phoneNum   );
+    printf("┗━━━━━━━━━━━━━━━━ \n\n" );
 }
+
+/* 함    수: void ShowPhoneInfoByPtr(phoneData * pPhone)
+ * 기    능: 이름과 전화번호 정보 출력.
+ * 반    환: void.
+ *
+ */
+void ShowPhoneInfoByPtr(phoneData * pPhone)
+{
+    printf("┏━━━━━━━━━━━━━━━━ \n"   );
+    printf("┃ ▶ 이름: %s \n", pPhone->name         );
+    printf("┃ ▶ 전화번호: %s \n", pPhone->phoneNum );
+    printf("┗━━━━━━━━━━━━━━━━ \n\n" );
+}
+
+/* end of file */
